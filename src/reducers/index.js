@@ -2,6 +2,9 @@
 // but we just want to know how we could really use the redux in the application
 // so we make the list of songs here
 
+// if you don't know do you need to add {}, see the document
+import { combineReducers } from 'redux';
+
 const songsReducer = () => {
     return [
         { title: 'No Scrubs', duration: '4:05' },
@@ -20,3 +23,9 @@ const selectedSongReducer = (selectedSong=null, action) => {
 
     return selectedSong;
 }
+
+// now combine the reducers and export default
+export default combineReducers({
+    songs: songsReducer,
+    selectedSong: selectedSongReducer
+});
